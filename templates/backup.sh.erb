@@ -1,0 +1,3 @@
+#!/bin/bash
+
+java -noverify -Dbackup.home=<%= @backup_home %> -Dstash.home=<%= @home_stash %> -Dstash.baseUrl=http://<%= hostname %>:7990 -Dstash.user=<%= @backup_user %> -Dstash.password=<%= @backup_password %> -jar <%= @installdir %>/stash-backup-client-<%= @version %>/stash-backup-client.jar
