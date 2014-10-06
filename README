@@ -1,4 +1,25 @@
 stash_backup_client
 
-This is the stash_backup_client module.
+This is module to install Stash Backup Client (https://marketplace.atlassian.com/plugins/com.atlassian.stash.backup.client)
 
+Tested on Ubuntu 14.04 and Stash Backup Client in version 1.3.1
+
+Usage
+-----
+
+class { 'stash_backup_client':
+  version         = '1.3.1',                      # version of client
+  stash_home      = '/home/stash',                # STASH_HOME environment variable setting from Stash installation
+  backup_user     = 'username',                   # username of backup user in Stash with admin priviliges
+  backup_password = 'password',                   # password for backup user
+  backup_home     = '/backup',                    # directory for backups
+  installdir      = '/opt',                       # directory to install Stash backup client
+  url             = 'http://download.org/puppet,  # path to zip file with client e.g. stash-backup-distribution-1.3.1.zip. You have to save the file checksum e.g. stash-backup-distribution-1.3.1.zip.md5
+
+    # Parameters for cron job to execute backup script
+  minute          = '10',
+  hour            = '20',
+  date            = '*', 
+  month           = '*',
+  weekday         = '*',
+}

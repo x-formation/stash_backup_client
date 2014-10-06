@@ -3,6 +3,7 @@ class stash_backup_client (
   $stash_home      = $stash_backup_client::stash_home, 
   $backup_user     = $stash_backup_client::params::backup_user, 
   $backup_password = $stash_backup_client::params::backup_password, 
+  $backup_home     = $stash_backup_client::params::backup_home, 
   $installdir      = $stash_backup_client::params::installdir,
   $url             = $stash_backup_client::params::url,
   $minute          = $stash_backup_client::params::minute,
