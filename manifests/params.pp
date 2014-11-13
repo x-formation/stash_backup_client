@@ -1,6 +1,6 @@
 class stash_backup_client::params {
   $home_stash      = '/var/atlassian/application-data/stash'
-  $version         = '1.3.1'
+  $version         = '1.5.0'
   $backup_user     = 'backup-stash'
   $backup_password = ''
   $backup_home     = '/backup'
