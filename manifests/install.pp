@@ -1,10 +1,17 @@
 class stash_backup_client::install inherits stash_backup_client {
 
-  archive { "stash-backup-distribution-${version}":
-    ensure    => present,
-    url       => "${url}/stash-backup-distribution-${version}.zip",
-    target    => "$installdir",
-    extension => "zip",
+  wget::fetch { "${url}/stash-backup-distribution-${version}.zip":
+    destination => "${installdir}/stash-backup-distribution-${version}.zip",
+    timeout     => 0,
+    verbose     => false,
+  }
+  ->
+  exec { "unzip_stash-backup_client":
+    command   => "unzip stash-backup-distribution-${version}.zip",
+    creates   => "${installdir}/stash-backup-client-${version}",
+    cwd       => $installdir,
+    logoutput => "on_failure",
+    path      => "/bin:/usr/bin",
   }
 }
 
