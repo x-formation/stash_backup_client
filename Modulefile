@@ -1,5 +1,5 @@
 name    'xformation-stash_backup_client'
-version '0.1.1'
+version '0.1.2'
 source 'https://github.com/x-formation/'
 author 'mwitowski@x-formation.com'
 license 'Apache License, Version 2.0'
